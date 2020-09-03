@@ -1,3 +1,4 @@
+using AzureFunctions.Extensions.Swashbuckle.Attribute;
 using Carpark.Domain;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -5,6 +6,7 @@ using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.Net;
 using System.Text.Json;
 using System.Threading.Tasks;
 
@@ -22,8 +24,13 @@ namespace Carpark.FnApp
         //
         // As these costs would be advertised publicly, there is no need for authorization tokens.
         [FunctionName("Billing")]
+        [ProducesResponseType(typeof(Domain.Billing), (int) HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(string), (int) HttpStatusCode.BadRequest)]
+        [ProducesResponseType(typeof(string), (int) HttpStatusCode.UnprocessableEntity)]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "post", Route = "billing")] HttpRequest req
+            [HttpTrigger(AuthorizationLevel.Function, "post", Route = "billing")]
+            [RequestBodyType(typeof(Session), "session")]
+            HttpRequest req
         )
         {
             try
