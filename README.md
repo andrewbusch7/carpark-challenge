@@ -1,6 +1,6 @@
 # Carpark
 
-This is a simple Azure Functions project to calculate the cost of a carpark session where there are various rules at
+This is a simple Azure Functions project to calculate the cost of a carpark session where there are various cost rules at
 play.
 
 It demonstrates several effective coding practices:
