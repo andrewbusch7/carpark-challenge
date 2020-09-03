@@ -34,8 +34,9 @@ namespace Carpark.FnApp
                 var session = await JsonSerializer.DeserializeAsync<Session>(req.Body, _jsonSerializerOptions);
 
                 // If there ends up being DB / external service integration, this block should move to a service layer
-                // with the required dependencies injected. The Validate() and CalculateBilling() functions would remain
-                // on Session in favour of a Rich Domain Model.
+                // with the required dependencies injected, and this Azure Function class taking the service as a
+                // dependency injection. The Validate() and CalculateBilling() functions would remain on Session in
+                // favour of a Rich Domain Model.
                 //
                 // Rich Domain Models (that is, not just properties but also methods) more distinctly express the domain
                 // functionality by providing decoupling from the integration of the domain behaviour (e.g. database and
