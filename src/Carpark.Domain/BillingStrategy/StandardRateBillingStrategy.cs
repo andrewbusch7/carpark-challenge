@@ -5,6 +5,7 @@ namespace Carpark.Domain.BillingStrategy
     public class StandardRateBillingStrategy : IBillingStrategy
     {
         public string Name => "Standard Rate";
+        public string Type => "Hourly Rate";
 
         private Session _session;
 

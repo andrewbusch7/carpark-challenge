@@ -63,7 +63,7 @@ namespace Carpark.Domain
                 .OrderBy(s => s.CalculateCost())
                 .First();
 
-            return new Billing(cheapestStrategy.CalculateCost(), "AUD", cheapestStrategy.Name);
+            return new Billing(cheapestStrategy);
         }
     }
 }

@@ -59,7 +59,14 @@ namespace Carpark.FnApp.Tests
             request.Body = await body.ReadAsStreamAsync();
 
             var response = await Billing.Run(request);
-            response.Should().BeEquivalentTo(new OkObjectResult(new Domain.Billing(6.5m, "AUD", "Night Rate")));
+            response.Should().BeEquivalentTo(new OkObjectResult(
+                new Domain.Billing()
+                {
+                    Cost = 6.5m,
+                    RateName = "Night Rate",
+                    RateType = "Flat Rate"
+                }
+            ));
         }
 
         [Fact]
@@ -76,7 +83,14 @@ namespace Carpark.FnApp.Tests
             request.Body = await body.ReadAsStreamAsync();
 
             var response = await Billing.Run(request);
-            response.Should().BeEquivalentTo(new OkObjectResult(new Domain.Billing(13m, "AUD", "Early Bird")));
+            response.Should().BeEquivalentTo(new OkObjectResult(
+                new Domain.Billing()
+                {
+                    Cost = 13m,
+                    RateName = "Early Bird",
+                    RateType = "Flat Rate"
+                }
+            ));
         }
 
         [Fact]
@@ -93,7 +107,14 @@ namespace Carpark.FnApp.Tests
             request.Body = await body.ReadAsStreamAsync();
 
             var response = await Billing.Run(request);
-            response.Should().BeEquivalentTo(new OkObjectResult(new Domain.Billing(10m, "AUD", "Weekend Rate")));
+            response.Should().BeEquivalentTo(new OkObjectResult(
+                new Domain.Billing()
+                {
+                    Cost = 10m,
+                    RateName = "Weekend Rate",
+                    RateType = "Flat Rate"
+                }
+            ));
         }
 
         [Fact]
@@ -110,7 +131,14 @@ namespace Carpark.FnApp.Tests
             request.Body = await body.ReadAsStreamAsync();
 
             var response = await Billing.Run(request);
-            response.Should().BeEquivalentTo(new OkObjectResult(new Domain.Billing(6.5m, "AUD", "Night Rate")));
+            response.Should().BeEquivalentTo(new OkObjectResult(
+                new Domain.Billing()
+                {
+                    Cost = 6.5m,
+                    RateName = "Night Rate",
+                    RateType = "Flat Rate"
+                }
+            ));
         }
 
         [Fact]
@@ -127,7 +155,14 @@ namespace Carpark.FnApp.Tests
             request.Body = await body.ReadAsStreamAsync();
 
             var response = await Billing.Run(request);
-            response.Should().BeEquivalentTo(new OkObjectResult(new Domain.Billing(5m, "AUD", "Standard Rate")));
+            response.Should().BeEquivalentTo(new OkObjectResult(
+                new Domain.Billing()
+                {
+                    Cost = 5m,
+                    RateName = "Standard Rate",
+                    RateType = "Hourly Rate"
+                }
+            ));
         }
 
         [Fact]
@@ -144,7 +179,14 @@ namespace Carpark.FnApp.Tests
             request.Body = await body.ReadAsStreamAsync();
 
             var response = await Billing.Run(request);
-            response.Should().BeEquivalentTo(new OkObjectResult(new Domain.Billing(10m, "AUD", "Weekend Rate")));
+            response.Should().BeEquivalentTo(new OkObjectResult(
+                new Domain.Billing()
+                {
+                    Cost = 10m,
+                    RateName = "Weekend Rate",
+                    RateType = "Flat Rate"
+                }
+            ));
         }
 
         [Fact]
@@ -161,7 +203,14 @@ namespace Carpark.FnApp.Tests
             request.Body = await body.ReadAsStreamAsync();
 
             var response = await Billing.Run(request);
-            response.Should().BeEquivalentTo(new OkObjectResult(new Domain.Billing(10m, "AUD", "Standard Rate")));
+            response.Should().BeEquivalentTo(new OkObjectResult(
+                new Domain.Billing()
+                {
+                    Cost = 10m,
+                    RateName = "Standard Rate",
+                    RateType = "Hourly Rate"
+                }
+            ));
         }
 
         [Fact]
@@ -178,7 +227,14 @@ namespace Carpark.FnApp.Tests
             request.Body = await body.ReadAsStreamAsync();
 
             var response = await Billing.Run(request);
-            response.Should().BeEquivalentTo(new OkObjectResult(new Domain.Billing(180m, "AUD", "Standard Rate")));
+            response.Should().BeEquivalentTo(new OkObjectResult(
+                new Domain.Billing()
+                {
+                    Cost = 180m,
+                    RateName = "Standard Rate",
+                    RateType = "Hourly Rate"
+                }
+            ));
         }
 
         [Fact]
@@ -195,7 +251,14 @@ namespace Carpark.FnApp.Tests
             request.Body = await body.ReadAsStreamAsync();
 
             var response = await Billing.Run(request);
-            response.Should().BeEquivalentTo(new OkObjectResult(new Domain.Billing(160m, "AUD", "Standard Rate")));
+            response.Should().BeEquivalentTo(new OkObjectResult(
+                new Domain.Billing()
+                {
+                    Cost = 160m,
+                    RateName = "Standard Rate",
+                    RateType = "Hourly Rate"
+                }
+            ));
         }
 
         [Fact]
@@ -212,7 +275,14 @@ namespace Carpark.FnApp.Tests
             request.Body = await body.ReadAsStreamAsync();
 
             var response = await Billing.Run(request);
-            response.Should().BeEquivalentTo(new OkObjectResult(new Domain.Billing(160m, "AUD", "Standard Rate")));
+            response.Should().BeEquivalentTo(new OkObjectResult(
+                new Domain.Billing()
+                {
+                    Cost = 160m,
+                    RateName = "Standard Rate",
+                    RateType = "Hourly Rate"
+                }
+            ));
         }
 
         [Fact]
@@ -229,7 +299,14 @@ namespace Carpark.FnApp.Tests
             request.Body = await body.ReadAsStreamAsync();
 
             var response = await Billing.Run(request);
-            response.Should().BeEquivalentTo(new OkObjectResult(new Domain.Billing(160m, "AUD", "Standard Rate")));
+            response.Should().BeEquivalentTo(new OkObjectResult(
+                new Domain.Billing()
+                {
+                    Cost = 160m,
+                    RateName = "Standard Rate",
+                    RateType = "Hourly Rate"
+                }
+            ));
         }
     }
 }

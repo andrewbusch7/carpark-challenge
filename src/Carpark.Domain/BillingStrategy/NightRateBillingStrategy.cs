@@ -6,6 +6,7 @@ namespace Carpark.Domain.BillingStrategy
     public class NightRateBillingStrategy : IBillingStrategy
     {
         public string Name => "Night Rate";
+        public string Type => "Flat Rate";
 
         private Session _session;
 

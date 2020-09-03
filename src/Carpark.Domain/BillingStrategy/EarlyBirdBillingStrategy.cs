@@ -5,6 +5,7 @@ namespace Carpark.Domain.BillingStrategy
     public class EarlyBirdBillingStrategy : IBillingStrategy
     {
         public string Name => "Early Bird";
+        public string Type => "Flat Rate";
 
         private Session _session;
 

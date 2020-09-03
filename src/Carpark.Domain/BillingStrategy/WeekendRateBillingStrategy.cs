@@ -6,6 +6,7 @@ namespace Carpark.Domain.BillingStrategy
     public class WeekendRateBillingStrategy : IBillingStrategy
     {
         public string Name => "Weekend Rate";
+        public string Type => "Flat Rate";
 
         private Session _session;
 

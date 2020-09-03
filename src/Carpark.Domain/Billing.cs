@@ -1,16 +1,22 @@
+using Carpark.Domain.BillingStrategy;
+
 namespace Carpark.Domain
 {
     public class Billing
     {
         public decimal Cost { get; set; }
-        public string Currency { get; set; }
-        public string BillingStrategyName { get; set; }
+        public const string Currency = "AUD";
+        public string RateName { get; set; }
+        public string RateType { get; set; }
 
-        public Billing(decimal cost, string currency, string billingStrategyName)
+        // For tests
+        public Billing() { }
+
+        public Billing(IBillingStrategy billingStrategy)
         {
-            Cost = cost;
-            Currency = currency;
-            BillingStrategyName = billingStrategyName;
+            Cost = billingStrategy.CalculateCost();
+            RateName = billingStrategy.Name;
+            RateType = billingStrategy.Type;
         }
     }
 }
